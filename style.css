@@ -1,0 +1,373 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --pink: hsl(0, 78%, 79%);
+  --cyan: hsl(172, 46%, 57%);
+  --summer-yellow: hsl(28, 89%, 67%);
+  --light-red: hsl(7, 77%, 66%);
+  --galactic-blue: hsl(252, 66%, 62%);
+  --dark-purple: hsl(314, 45%, 23%);
+
+  --black: hsl(0, 0%, 1%);
+  --gray: hsl(30, 5%, 45%);
+  --white: hsl(28, 100%, 97%);
+
+  --fs-base: 1.125rem;
+
+  --ff-base: 'Plus Jakarta Sans', sans-serif;
+
+  --fw-base: 500;
+  --fw-bold: 700;
+
+  /* viewport width when max width is met 1238px */
+  --site-width: 1110px;
+  --max-margin: 4rem;
+}
+
+/* overflow because of the slider */
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  padding-top: clamp(1rem, -0.0735rem + 4.5802vw, 2.125rem);
+  padding-bottom: clamp(2rem, 1.1309rem + 3.708vw, 4rem);
+
+  font-weight: var(--fw-base);
+  font-family: var(--ff-base);
+
+  background-color: var(--white);
+  color: var(--gray);
+}
+
+body > * {
+  max-width: calc(var(--site-width) + (var(--max-margin) * 2));
+  margin-inline: auto;
+  padding-inline: clamp(1rem, -0.3006rem + 5.5491vw, 4rem);
+}
+
+header,
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--black);
+}
+
+h1 {
+  margin-bottom: 0.45em;
+  font-size: clamp(2.25rem, 1.6818rem + 2.4242vw, 3.5rem);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: clamp(1.625rem, 1.2273rem + 1.697vw, 2.5rem);
+  line-height: 1.25;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 1.0229rem + 2.0356vw, 2rem);
+}
+
+.btn {
+  display: inline-block;
+  width: max-content;
+  font-size: 1rem;
+  border-radius: 50vw;
+  padding: 0.875em 2.875em;
+  text-decoration: none;
+
+  background-color: var(--black);
+  color: var(--white);
+
+  transition: 250ms ease;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* 
+vertical button alignment: 
+https://ishadeed.com/article/button-label-alignment/ 
+*/
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 1.75em;
+  vertical-align: middle;
+}
+
+.btn:hover {
+  background-color: var(--galactic-blue);
+}
+
+main .btn {
+  background-color: var(--light-red);
+}
+
+main .btn:hover {
+  background-color: var(--summer-yellow);
+}
+
+section {
+  margin-block: 4rem;
+}
+
+/* GRID START */
+
+.grid {
+  display: grid;
+  /* 8.25 rem is minimal width od 320px viewport */
+  grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.grid-double {
+  display: grid;
+  gap: 1.5rem;
+  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  grid-row: span 2;
+}
+
+.item {
+  display: grid;
+  align-content: space-between;
+  gap: 2.5rem;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  background-color: var(--item-bg, #ccc);
+  color: white;
+}
+
+.item > img {
+  justify-self: end;
+}
+
+.grid > .item:nth-child(1) {
+  grid-row: span 2;
+}
+
+/* GRID END */
+
+/* MYSELF START */
+
+.myself {
+  margin-block: 8rem;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: clamp(0.625rem, -1.5972rem + 4.6296vw, 1.875rem);
+  align-items: center;
+}
+
+.card > img {
+  grid-column: span 5;
+}
+
+.card-content {
+  grid-column: 7 / span 6;
+  display: grid;
+  row-gap: 2rem;
+}
+
+/* MYSELF END */
+
+/* WORK START */
+
+.work {
+  margin-block: 8rem;
+}
+
+.slider {
+  position: relative;
+  margin-block: clamp(2rem, 0.5687rem + 6.1069vw, 3.5rem);
+  margin-inline: auto;
+  max-width: clamp(16.875rem, 0.7729rem + 68.7023vw, 33.75rem);
+  aspect-ratio: 540 / 360;
+}
+
+.slider-inner {
+  position: absolute;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  transition: translate 1000ms cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.slider[data-active='1'] .slider-inner {
+  translate: -10%;
+}
+
+.slider[data-active='2'] .slider-inner {
+  translate: -30%;
+}
+
+.slider[data-active='3'] .slider-inner {
+  translate: -50%;
+}
+
+.slider[data-active='4'] .slider-inner {
+  translate: -70%;
+}
+
+.slider[data-active='5'] .slider-inner {
+  translate: -90%;
+}
+
+.slider-inner img {
+  max-width: clamp(16.875rem, 0.7729rem + 68.7023vw, 33.75rem);
+  margin-inline: clamp(0.9375rem, 0.0429rem + 3.8168vw, 1.875rem);
+  border-radius: 0.5rem;
+}
+
+.slider-control {
+  display: inline-grid;
+  place-items: center;
+  width: 64px;
+  aspect-ratio: 1;
+  margin: 0 0.5rem;
+  border: 0;
+  border-radius: 50%;
+  background-color: var(--black);
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.slider-control:hover {
+  background-color: var(--galactic-blue);
+}
+
+.slider-control img {
+  pointer-events: none;
+}
+
+/* WORK END */
+
+/* FEATURED START */
+
+.featured {
+  border-radius: 0.625rem;
+  padding-block: clamp(3rem, 2.0458rem + 4.0712vw, 4rem);
+  padding-inline: clamp(1.5rem, -1.3626rem + 12.2137vw, 4.5rem);
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+@media (min-width: 1000px) {
+  .featured {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+  }
+}
+
+.featured-content * {
+  color: inherit;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
+  max-width: 42ch;
+}
+
+/* FEATURED END */

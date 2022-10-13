@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="This project will test your layout skills, especially in making the site fully responsive. The skills grid is a perfect chance to practice CSS Grid.">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
+
+  <title>Frontend Mentor | Single-page design portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <header>
+    <img src="./assets/logo.svg" alt="">
+    <a class="btn" href="#">Free Consultation</a>
+  </header>
+
+  <main>
+    <section class="intro text-center">
+      <h1>Design solutions made easy</h1>
+      <p>With over ten years of experience in various design disciplines, I’m your one-stop shop for your design needs.
+      </p>
+    </section>
+
+    <section class="grid">
+      <div class="item" style="--item-bg: var(--galactic-blue)">
+        <img src="./assets/pattern-graphic-design.svg" alt="">
+        Graphic Design
+      </div>
+      <div class="grid-double">
+        <div class="item" style="--item-bg: var(--summer-yellow)">
+          <img src="./assets/pattern-ui-ux.svg" alt="" srcset="">
+          UI/UX
+        </div>
+        <div class="item" style="--item-bg: var(--pink)">
+          <img src="./assets/pattern-apps.svg" alt="">
+          Apps
+        </div>
+        <div class="item" style="--item-bg: var(--light-red); grid-column: span 2">
+          <img src="./assets/pattern-illustrations.svg" alt="">
+          Illustrations
+        </div>
+      </div>
+      <div class="item" style="--item-bg: var(--cyan)">
+        <img src="./assets/pattern-photography.svg" alt="">
+        Photography
+      </div>
+      <div class="item" style="--item-bg: var(--dark-purple)">
+        <img src="./assets/pattern-motion-graphics.svg" alt="">
+        Motion Graphics
+      </div>
+    </section>
+
+    <section class="myself">
+      <div class="card">
+        <img src="./assets/image-amy.webp" alt="">
+        <div class="card-content">
+          <h2>I’m Amy, and I’d love to work on your next project</h2>
+          <p>I love working with others to create beautiful design solutions. I’ve designed everything from brand
+            illustrations
+            to complete mobile apps. I’m also handy with a camera!</p>
+          <a class="btn" href="#">Free Consultation</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="work text-center">
+      <h3>My Work</h3>
+      <div class="slider" data-active="3">
+        <div class="slider-inner">
+          <img src="./assets/image-slide-1.jpg" alt="">
+          <img src="./assets/image-slide-2.jpg" alt="">
+          <img src="./assets/image-slide-3.jpg" alt="">
+          <img src="./assets/image-slide-4.jpg" alt="">
+          <img src="./assets/image-slide-5.jpg" alt="">
+        </div>
+      </div>
+      <button class="slider-control" data-slide="previous">
+        <div class="sr-only">Previous slide</div>
+        <img src="./assets/icon-arrow-left.svg" alt="">
+      </button>
+      <button class="slider-control" data-slide="next">
+        <div class="sr-only">Next slide</div>
+        <img src="./assets/icon-arrow-right.svg" alt="">
+      </button>
+    </section>
+
+    <section class="featured">
+      <div class="featured-content">
+        <h2>Book a call with me</h2>
+        <p>I’d love to have a chat to see how I can help you. The best first step is for us to discuss your project
+          during
+          a free
+          consultation. Then we can move forward from there.</p>
+      </div>
+      <a class="btn" href="#">Free Consultation</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <img src="./assets/logo.svg" alt="">
+    <a class="btn" href="#">Free Consultation</a>
+  </footer>
+
+
+  <script src="./app.js"></script>
+
+</body>
+
+</html>
