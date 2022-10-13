@@ -162,13 +162,8 @@ h3 {
   padding: 0.875em 2.875em;
   text-decoration: none;
 
-  /* for removing the highlight */
-  -webkit-tap-highlight-color: transparent;
   background-color: var(--black);
   color: var(--white);
-
-  /* for removing the highlight */
-  -webkit-tap-highlight-color: transparent;
 
   transition: 250ms ease;
 }
@@ -368,6 +363,8 @@ section {
   background-color: var(--black);
   cursor: pointer;
   transition: 250ms ease;
+  /* for removing the highlight */
+  -webkit-tap-highlight-color: transparent;
 }
 
 .slider-control:hover {
