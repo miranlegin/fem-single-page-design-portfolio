@@ -165,23 +165,10 @@ h3 {
   background-color: var(--black);
   color: var(--white);
 
+  /* for removing the highlight */
+  -webkit-tap-highlight-color: transparent;
+
   transition: 250ms ease;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-.text-center {
-  text-align: center;
 }
 
 /* 
@@ -205,6 +192,22 @@ main .btn {
 
 main .btn:hover {
   background-color: var(--summer-yellow);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-center {
+  text-align: center;
 }
 
 section {
