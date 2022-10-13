@@ -93,8 +93,11 @@ select {
   --fw-bold: 700;
 
   /* viewport width when max width is met 1238px */
-  --site-width: 1110px;
-  --max-margin: 4rem;
+  --site-width: 69.375em;
+  --max-margin: 4em;
+
+  --grid-gap: 1.5rem;
+  --grid-item-gap: 2rem;
 }
 
 /* overflow because of the slider */
@@ -119,6 +122,7 @@ body > * {
   max-width: calc(var(--site-width) + (var(--max-margin) * 2));
   margin-inline: auto;
   padding-inline: clamp(1rem, -0.3006rem + 5.5491vw, 4rem);
+  font-size: 1.125rem;
 }
 
 header,
@@ -211,23 +215,22 @@ section {
 
 .grid {
   display: grid;
-  /* 8.25 rem is minimal width od 320px viewport */
   grid-template-columns: repeat(auto-fit, minmax(min(18rem, 100%), 1fr));
-  grid-template-rows: repeat(2, 1fr);
-  gap: 1.5rem;
+  /* 8.25 rem is minimal width od 320px viewport */
+  gap: var(--grid-gap);
 }
 
 .grid-double {
   display: grid;
-  gap: 1.5rem;
-  grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+  gap: var(--grid-gap);
+  grid-template-columns: repeat(2, 1fr);
   grid-row: span 2;
 }
 
 .item {
   display: grid;
   align-content: space-between;
-  gap: 2.5rem;
+  gap: var(--grid-item-gap);
   border-radius: 0.5rem;
   padding: 1.5rem;
   font-size: 1.5rem;
@@ -248,18 +251,17 @@ section {
 /* MYSELF START */
 
 .myself {
-  margin-block: 8rem;
+  margin-block: clamp(6.25rem, 5.0573rem + 5.0891vw, 7.5rem);
 }
 
 .card {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-gap: clamp(0.625rem, -1.5972rem + 4.6296vw, 1.875rem);
-  align-items: center;
+  text-align: center;
 }
 
-.card > img {
+.card-image {
+  position: relative;
   grid-column: span 5;
+  height: 100%;
 }
 
 .card-content {
@@ -268,12 +270,42 @@ section {
   row-gap: 2rem;
 }
 
+@media (max-width: 44.0625em) {
+  .card-image {
+    margin-bottom: 2.5rem;
+  }
+
+  .card-content {
+    justify-items: center;
+  }
+}
+
+@media (min-width: 45em) {
+  .card {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: clamp(0.625rem, -1.5972rem + 4.6296vw, 1.875rem);
+    align-items: center;
+    text-align: left;
+  }
+}
+
+@media (min-width: 45em) and (max-width: 62.5em) {
+  .card-image img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: none;
+    height: 100%;
+  }
+}
+
 /* MYSELF END */
 
 /* WORK START */
 
 .work {
-  margin-block: 8rem;
+  margin-block: clamp(6.25rem, 5.0573rem + 5.0891vw, 7.5rem);
 }
 
 .slider {
@@ -323,7 +355,7 @@ section {
 .slider-control {
   display: inline-grid;
   place-items: center;
-  width: 64px;
+  width: 4rem;
   aspect-ratio: 1;
   margin: 0 0.5rem;
   border: 0;
@@ -354,7 +386,7 @@ section {
   text-align: center;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 62.5em) {
   .featured {
     display: flex;
     align-items: center;
