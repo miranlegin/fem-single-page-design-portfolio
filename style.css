@@ -93,8 +93,8 @@ select {
   --fw-bold: 700;
 
   /* viewport width when max width is met 1238px */
-  --site-width: 69.375em;
-  --max-margin: 4em;
+  --site-width: 69.375rem;
+  --max-margin: 4rem;
 
   --grid-gap: 1.5rem;
   --grid-item-gap: 2rem;
@@ -162,6 +162,8 @@ h3 {
   padding: 0.875em 2.875em;
   text-decoration: none;
 
+  /* for removing the highlight */
+  -webkit-tap-highlight-color: transparent;
   background-color: var(--black);
   color: var(--white);
 
