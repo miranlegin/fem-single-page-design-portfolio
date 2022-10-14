@@ -154,6 +154,7 @@ h3 {
   font-size: clamp(1.5rem, 1.0229rem + 2.0356vw, 2rem);
 }
 
+/* mobile version buttons should be smaller */
 .btn {
   display: inline-block;
   width: max-content;
